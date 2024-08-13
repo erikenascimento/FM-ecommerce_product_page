@@ -1,0 +1,8 @@
+.hamburguerMENU {
+	background-image: url("./icon-menu.svg");
+
+	height: 15px;
+	width: 16px;
+
+	display: block;
+}

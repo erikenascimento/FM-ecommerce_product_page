@@ -1,13 +1,13 @@
 import AvatarRound from "../AvatarRound";
 import Logo from "../Logo";
-import HamburgerMENU from "./HamburgerMENU";
+import HamburguerMENU from "./HamburguerMENU";
 import ShoppingCartIcon from "./ShoppingCartIcon";
 
 const NavBar = () => {
 	return (
 		<nav className="flex space-between w-screen">
 			<div className="flex">
-				<HamburgerMENU />
+				<HamburguerMENU />
 				<Logo />
 			</div>
 			<div className="flex">
