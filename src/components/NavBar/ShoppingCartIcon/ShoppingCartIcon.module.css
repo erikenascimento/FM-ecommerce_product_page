@@ -1,7 +1,9 @@
 .shoppingCartIcon {
 	background-image: url("./icon-cart.svg");
+	background-repeat: no-repeat;
+	background-position: center;
 
-	height: 100%;
+	height: 21.82px;
 	width: 20px;
 
 	display: block;

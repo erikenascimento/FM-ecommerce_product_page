@@ -1,0 +1,15 @@
+.navBar {
+  // Flex options
+  display: flex;
+  justify-content: space-between;
+  // Dimensioning
+  width: 100vw;
+  // Spacing
+  padding: 1.5rem;
+}
+
+.navBar__navDiv {
+  align-items: center;
+  display: flex;
+  column-gap: 1rem;
+}
