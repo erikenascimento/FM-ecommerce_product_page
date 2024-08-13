@@ -1,5 +1,7 @@
+import styled from "./Logo.module.css";
+
 const Logo = () => {
-	return <div>Logo</div>;
+	return <span className={styled.Logo}></span>;
 };
 
 export default Logo;
