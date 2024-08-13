@@ -1,8 +1,10 @@
-/* The code bellow came with the next initialization, I'll be keep them commented for now*/
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* The code bellow came with the next initialization, I'll be keep them commented for now*/
+
+/*
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
