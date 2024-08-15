@@ -2,6 +2,7 @@ import AvatarRound from "../AvatarRound";
 import Logo from "../Logo";
 import HamburguerMENU from "./HamburguerMENU";
 import ShoppingCartIcon from "../icons/IconShoppingCart";
+
 import styles from "./NavBar.module.scss";
 
 const NavBar = () => {
