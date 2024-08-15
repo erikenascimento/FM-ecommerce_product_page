@@ -57,19 +57,18 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library, version: ^18
+- [React](https://reactjs.org/) - JS library, version: 18.3.1
 - [Next.js](https://nextjs.org/) - React framework, version: 14.2.5
 - [Styled Components](https://styled-components.com/) - For styles, version: 6.1.12
 
 Node version: 20.16.0
 npm version: 10.8.1
 Sass version: 1.77.8
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+Tailwind version: 3.4.9
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned how I can use the commands `npm list <package-name>` and `npm info <package-name> version`to check for the versions of packages installed in the project.
 
 To see how you can add code snippets, see below:
 
