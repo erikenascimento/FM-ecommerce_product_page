@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+	--global-margin: 1.5rem;
+}
+
+body {
+	font-family: "Kumbh Sans", sans-serif;
+}
+
 /* The code bellow came with the next initialization, I'll be keep them commented for now*/
 
 /*
