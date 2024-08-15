@@ -5,6 +5,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 :root {
+	/* Text Colors */
+	--secondary-text-grey: #69707d;
+	--primary-text-black: #1d2026;
+	/* Component Colors */
+	--primary-orange: #ff7e1b;
+
+	--light-greyish-blue: hsl(223, 64%, 98%);
+	/* Spacing */
 	--global-margin: 1.5rem;
 }
 
@@ -38,9 +46,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+*/
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
+	.text-balance {
+		text-wrap: balance;
+	}
+}
