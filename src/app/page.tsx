@@ -6,10 +6,10 @@ export default function Home() {
 	return (
 		<>
 			<NavBar />
-			<section>
+			<main>
 				<ProductSwiper />
 				<ProductInfo />
-			</section>
+			</main>
 		</>
 	);
 }

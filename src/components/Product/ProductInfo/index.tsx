@@ -4,7 +4,7 @@ import styles from "./ProductInfo.module.scss";
 
 function ProductInfo() {
 	return (
-		<main>
+		<>
 			<article className={styles.productArticle}>
 				<span className={styles["productArticle__brandName"]}>
 					Sneaker Company
@@ -24,7 +24,7 @@ function ProductInfo() {
 				<span className={styles["pricing__fullPrice"]}>$250.00</span>
 			</div>
 			<ShoppingButtons />
-		</main>
+		</>
 	);
 }
 
