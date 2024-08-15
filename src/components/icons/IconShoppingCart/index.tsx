@@ -6,7 +6,7 @@ interface IIconProps {
 	color?: string;
 }
 
-const StyledIconShoppingCart = styled.i<IIconProps>`
+const StyledIconShoppingCart = styled.span<IIconProps>`
 	.iconShoppingCart {
 		/* Background */
 		background-image: url("./icon-cart.svg");
