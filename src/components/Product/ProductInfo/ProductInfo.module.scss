@@ -1,0 +1,75 @@
+.productArticle,
+.pricing {
+    // Variables
+    --secondary-text-grey: #69707d;
+    --primary-text-black: #1d2026;
+    // "Global" dimensioning
+    margin: var(--global-margin);
+    // Typography
+    font-weight: bold;
+
+    & > * {
+        margin-bottom: 1rem;
+    }
+}
+
+.productArticle {
+    &__brandName {
+        // Styling
+        color: var(--secondary-text-grey);
+        // Typography
+        font-size: 12px;
+        letter-spacing: 1.85px;
+        text-transform: uppercase;
+    }
+    &__title {
+        // Styling
+        color: var(--primary-text-black);
+        // Typography
+        font-size: 28px;
+        line-height: 32px;
+
+        margin-top: 0.5rem;
+    }
+    &__description {
+        // Styling
+        color: var(--secondary-text-grey);
+        // Typography
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: normal;
+    }
+}
+
+.pricing {
+    // Flex
+    display: flex;
+    justify-content: space-between;
+    // Dimensioning
+    height: 100%;
+    // Positioning
+    align-items: center;
+    justify-items: center;
+
+    &__finalPrice {
+        font-size: 28px;
+    }
+    &__discount {
+        // Styling
+        background-color: var(--primary-text-black);
+        color: white;
+        // Dimensioning
+        height: 27px;
+        padding: 3.5px 9.5px 3.5px 9.5px;
+        // Form
+        border-radius: 8px;
+
+        margin-right: 4rem;
+    }
+    &__fullPrice {
+        // Styling
+        color: var(--secondary-text-grey);
+        line-height: 26px;
+        text-decoration: line-through;
+    }
+}
