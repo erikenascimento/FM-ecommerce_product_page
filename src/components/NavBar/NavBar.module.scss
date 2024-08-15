@@ -3,9 +3,9 @@
   display: flex;
   justify-content: space-between;
   // Dimensioning
-  width: 100vw;
+  width: 100%;
   // Spacing
-  padding: 1.5rem;
+  padding: var(--global-margin);
 }
 
 .navBar__navDiv {
