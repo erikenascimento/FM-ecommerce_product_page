@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 interface IShoppingButtonProps {
-	backgroundColor: string;
+	$backgroundColor: string;
 	children: React.ReactNode;
 
 	secondaryColor?: string;
@@ -18,7 +18,7 @@ const StyledShoppingButton = styled.button<IShoppingButtonProps>`
 	gap: 1rem;
 	justify-content: center;
 	/* Colors */
-	background-color: ${props => props.backgroundColor};
+	background-color: ${props => props.$backgroundColor};
 	color: var(--primary-text-black);
 	/* Dimensioning */
 	height: 56px;
@@ -30,11 +30,11 @@ const StyledShoppingButton = styled.button<IShoppingButtonProps>`
 `;
 
 const ShoppingButton: React.FC<IShoppingButtonProps> = ({
-	backgroundColor,
+	$backgroundColor,
 	children,
 }) => {
 	return (
-		<StyledShoppingButton backgroundColor={backgroundColor}>
+		<StyledShoppingButton $backgroundColor={$backgroundColor}>
 			{children}
 		</StyledShoppingButton>
 	);
