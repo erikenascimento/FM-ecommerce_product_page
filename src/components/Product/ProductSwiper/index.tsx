@@ -1,13 +1,11 @@
 import styles from "./ProductSwiper.module.scss";
+import ProductSwiperButton from "./ProductSwiperButton";
 
 const ProductSwiper = () => {
 	return (
-		<figure>
-			<img
-				src="/images/product/image-product-1.jpg"
-				alt="Product image"
-				className={styles.productSwiper}
-			/>
+		<figure className={styles.productSwiper}>
+			<ProductSwiperButton />
+			<ProductSwiperButton />
 		</figure>
 	);
 };
