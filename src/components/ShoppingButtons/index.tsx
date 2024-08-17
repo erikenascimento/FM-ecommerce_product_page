@@ -10,7 +10,7 @@ function ShoppingButtons() {
 				- 0 +
 			</ShoppingButton>
 			<ShoppingButton $backgroundColor="var(--primary-orange)">
-				<IconShoppingCart />
+				<IconShoppingCart color="var(--primary-text-black)" />
 				Add to Cart
 			</ShoppingButton>
 		</div>
