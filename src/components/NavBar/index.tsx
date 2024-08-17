@@ -1,7 +1,7 @@
 import AvatarRound from "../AvatarRound";
+import IconShoppingCart from "../icons/IconShoppingCart";
 import Logo from "../Logo";
 import HamburguerMENU from "./HamburguerMENU";
-import ShoppingCartIcon from "../icons/IconShoppingCart";
 
 import styles from "./NavBar.module.scss";
 
@@ -13,7 +13,7 @@ const NavBar = () => {
 				<Logo />
 			</div>
 			<div className={styles["navBar__navDiv"]}>
-				<ShoppingCartIcon />
+				<IconShoppingCart />
 				<AvatarRound />
 			</div>
 		</nav>
