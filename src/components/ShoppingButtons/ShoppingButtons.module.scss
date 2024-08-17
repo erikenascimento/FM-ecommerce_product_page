@@ -1,4 +1,8 @@
 .shoppingButtons {
     margin-left: var(--global-margin);
     margin-right: var(--global-margin);
+
+    & > :first-child {
+        margin-bottom: 1rem;
+    }
 }
