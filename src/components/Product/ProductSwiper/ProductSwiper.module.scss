@@ -3,10 +3,11 @@
     align-items: center;
     justify-content: space-between;
     // Background
-    // background-image: url("/images/product/image-product-1.jpg");
     background-size: cover;
     background-position: center;
     // Dimensioning
     width: 100vw;
     height: 300px;
+    // Transition effect
+    transition: background-image 0.5s ease-in-out;
 }

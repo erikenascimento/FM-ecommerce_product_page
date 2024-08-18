@@ -1,6 +1,6 @@
 import styles from "./ProductSwiper.module.scss";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductSwiperButton from "./ProductSwiperButton";
 
 const productImages = [
@@ -24,6 +24,15 @@ const ProductSwiper = () => {
 			prevIndex === productImages.length - 1 ? 0 : prevIndex + 1
 		);
 	};
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			handleNextClick();
+		}, 5000);
+
+		// Clear interval on component unmount
+		return () => clearInterval(interval);
+	}, []);
 
 	return (
 		<figure
