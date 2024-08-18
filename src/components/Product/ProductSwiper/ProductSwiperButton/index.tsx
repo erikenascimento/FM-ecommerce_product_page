@@ -2,12 +2,13 @@ import styles from "./ProductSwiperButton.module.scss";
 
 interface ISwiperButton {
 	$icon: string;
+	onClick: () => void;
 }
 
-const ProductSwiperButton: React.FC<ISwiperButton> = ({ $icon }) => {
+const ProductSwiperButton: React.FC<ISwiperButton> = ({ $icon, onClick }) => {
 	if ($icon === "iconSwiperPrevious") {
 		return (
-			<button className={styles.productSwiperButton}>
+			<button className={styles.productSwiperButton} onClick={onClick}>
 				<svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M11 1 3 9l8 8"
@@ -22,7 +23,7 @@ const ProductSwiperButton: React.FC<ISwiperButton> = ({ $icon }) => {
 	}
 	if ($icon === "iconSwiperNext") {
 		return (
-			<button className={styles.productSwiperButton}>
+			<button className={styles.productSwiperButton} onClick={onClick}>
 				<svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="m2 1 8 8-8 8"
