@@ -4,8 +4,8 @@ import ProductSwiperButton from "./ProductSwiperButton";
 const ProductSwiper = () => {
 	return (
 		<figure className={styles.productSwiper}>
-			<ProductSwiperButton />
-			<ProductSwiperButton />
+			<ProductSwiperButton $icon="iconSwiperPrevious" />
+			<ProductSwiperButton $icon="iconSwiperNext" />
 		</figure>
 	);
 };

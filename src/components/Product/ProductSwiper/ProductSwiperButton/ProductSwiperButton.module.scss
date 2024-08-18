@@ -1,0 +1,14 @@
+.productSwiperButton {
+    // Flex
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    /* Background */
+    background-color: white;
+    /* Form */
+    border-radius: 100%;
+    /* Dimensioning */
+    width: 40px;
+    height: 40px;
+}
