@@ -1,38 +1,48 @@
+// CSS
 import styles from "./ProductSwiper.module.scss";
-
-import { useEffect, useState } from "react";
+// Libraries and components
+import { useState } from "react";
 import ProductSwiperButton from "./ProductSwiperButton";
+// Hooks and Constants
+import useSwiperControls from "@/hooks/useSwiperControls";
+import useAutoLoop from "@/hooks/useAutoLoop";
+import productImages from "@/constants/productImages";
 
-const productImages = [
-	"/images/product/image-product-1.jpg",
-	"/images/product/image-product-2.jpg",
-	"/images/product/image-product-3.jpg",
-	"/images/product/image-product-4.jpg",
-];
+// This is the legacy implementation before using the custom hooks.
+
+// const ProductSwiper = () => {
+// 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+// 	const handlePreviousClick = () => {
+// 		setCurrentImageIndex(prevIndex =>
+// 			prevIndex === 0 ? productImages.length - 1 : prevIndex - 1
+// 		);
+// 	};
+
+// 	const handleNextClick = () => {
+// 		setCurrentImageIndex(prevIndex =>
+// 			prevIndex === productImages.length - 1 ? 0 : prevIndex + 1
+// 		);
+// 	};
+
+// 	useEffect(() => {
+// 		const interval = setInterval(() => {
+// 			handleNextClick();
+// 		}, 5000);
+
+// 		// Clear interval on component unmount
+// 		return () => clearInterval(interval);
+// 	}, []);
 
 const ProductSwiper = () => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-	const handlePreviousClick = () => {
-		setCurrentImageIndex(prevIndex =>
-			prevIndex === 0 ? productImages.length - 1 : prevIndex - 1
-		);
-	};
+	const { handlePreviousClick, handleNextClick } = useSwiperControls(
+		setCurrentImageIndex,
+		productImages.length
+	);
 
-	const handleNextClick = () => {
-		setCurrentImageIndex(prevIndex =>
-			prevIndex === productImages.length - 1 ? 0 : prevIndex + 1
-		);
-	};
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			handleNextClick();
-		}, 5000);
-
-		// Clear interval on component unmount
-		return () => clearInterval(interval);
-	}, []);
+	useAutoLoop(handleNextClick, 5000);
 
 	return (
 		<figure
