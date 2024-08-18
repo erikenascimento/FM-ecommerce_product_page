@@ -6,3 +6,12 @@
 
 	display: block;
 }
+
+.muiDrawerItem {
+	font-family: "Kumbh Sans", sans-serif;
+	font-weight: bold; /* Make text bold */
+	font-size: 18px; /* Set font size to 18px */
+	color: var(--primary-text-black); /* Set color to --primary-text-black */
+
+	padding-left: 1rem;
+}

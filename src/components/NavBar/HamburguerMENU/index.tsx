@@ -23,7 +23,10 @@ const HamburguerMENU = () => {
 				{["Collections", "Men", "Women", "About", "Contact"].map(text => (
 					<ListItem key={text} disablePadding>
 						<ListItemButton>
-							<ListItemText primary={text} />
+							<ListItemText
+								primary={text}
+								classes={{ primary: styles.muiDrawerItem }}
+							/>
 						</ListItemButton>
 					</ListItem>
 				))}
