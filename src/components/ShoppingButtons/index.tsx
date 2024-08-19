@@ -4,18 +4,10 @@ import ShoppingButton from "../ShoppingButton";
 import IconShoppingCart from "../icons/IconShoppingCart";
 import IconShoppingMinus from "../icons/IconShoppingMinus";
 import IconShoppingPlus from "../icons/IconShoppingPlus";
-import { useState } from "react";
+import { useCart } from "@/context/CartProvider";
 
 function ShoppingButtons() {
-	const [itemCount, setItemCount] = useState(0);
-
-	const handleIncrement = () => {
-		setItemCount(prevCount => prevCount + 1);
-	};
-
-	const handleDecrement = () => {
-		setItemCount(prevCount => (prevCount > 0 ? prevCount - 1 : 0));
-	};
+	const { itemCount, handleIncrement, handleDecrement } = useCart();
 
 	return (
 		<div className={styles.shoppingButtons}>
