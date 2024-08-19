@@ -4,6 +4,7 @@ import Logo from "../Logo";
 import HamburguerMENU from "./HamburguerMENU";
 
 import styles from "./NavBar.module.scss";
+import ShoppingCart from "./ShoppingCart";
 
 const NavBar = () => {
 	return (
@@ -13,7 +14,7 @@ const NavBar = () => {
 				<Logo />
 			</div>
 			<div className={styles["navBar__navDiv"]}>
-				<IconShoppingCart />
+				<ShoppingCart />
 				<AvatarRound />
 			</div>
 		</nav>
