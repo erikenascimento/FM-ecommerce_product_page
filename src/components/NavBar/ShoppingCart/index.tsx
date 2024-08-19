@@ -81,17 +81,20 @@ export default function ShoppingCart() {
 						justifyContent: "center",
 					}}
 				>
-					<DialogContentText
-						id="alert-dialog-slide-description"
-						sx={{
-							// Typography
-							fontFamily: "'Kumbh sans', sans-serif",
-							fontWeight: "bold",
-						}}
-					>
-						{/* Your cart is empty. */}
-						You cart has: {itemCount} items.
-					</DialogContentText>
+					{/* The line bellow will make so that the component inside it will only render when the cart is empty */}
+					{itemCount === 0 && (
+						<DialogContentText
+							id="alert-dialog-slide-description"
+							sx={{
+								// Typography
+								fontFamily: "'Kumbh sans', sans-serif",
+								fontWeight: "bold",
+							}}
+						>
+							{/* Your cart is empty. */}
+							You cart has: {itemCount} items.
+						</DialogContentText>
+					)}
 				</DialogContent>
 				<DialogActions>{/* There were buttons here */}</DialogActions>
 			</Dialog>
