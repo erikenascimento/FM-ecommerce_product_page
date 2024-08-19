@@ -12,7 +12,7 @@ interface IShoppingButtonProps {
 	secondaryColor?: string;
 }
 
-const StyledShoppingButton = styled.button<IShoppingButtonProps>`
+const StyledShoppingButton = styled.span<IShoppingButtonProps>`
 	/* Flex */
 	display: flex;
 
