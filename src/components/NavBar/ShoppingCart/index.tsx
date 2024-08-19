@@ -9,6 +9,7 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import IconShoppingCart from "@/components/icons/IconShoppingCart";
 import { Divider } from "@mui/material";
+import { useCart } from "@/context/CartProvider";
 
 const Transition = React.forwardRef(function Transition(
 	props: TransitionProps & {
@@ -21,6 +22,8 @@ const Transition = React.forwardRef(function Transition(
 
 export default function ShoppingCart() {
 	const [open, setOpen] = React.useState(false);
+
+	const { itemCount } = useCart();
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -86,7 +89,8 @@ export default function ShoppingCart() {
 							fontWeight: "bold",
 						}}
 					>
-						Your cart is empty.
+						{/* Your cart is empty. */}
+						You cart has: {itemCount} items.
 					</DialogContentText>
 				</DialogContent>
 				<DialogActions>{/* There were buttons here */}</DialogActions>
