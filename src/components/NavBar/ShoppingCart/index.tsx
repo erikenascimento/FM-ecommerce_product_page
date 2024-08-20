@@ -8,8 +8,11 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import IconShoppingCart from "@/components/icons/IconShoppingCart";
-import { Divider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import { useCart } from "@/context/CartProvider";
+// CSS
+import styles from "./ShoppingCart.module.scss";
+import IconTrashBin from "@/components/icons/IconTrashBin";
 
 const Transition = React.forwardRef(function Transition(
 	props: TransitionProps & {
@@ -24,6 +27,7 @@ export default function ShoppingCart() {
 	const [open, setOpen] = React.useState(false);
 
 	const { itemCount } = useCart();
+	let totalCost = (itemCount * 125).toFixed(2);
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -99,13 +103,21 @@ export default function ShoppingCart() {
 							Your cart is empty.
 						</DialogContentText>
 					) : (
-						<div>
-							<span className="productThumb" />
+						<Box sx={{ display: "flex", gap: "1rem", width: "100%}" }}>
+							<span className={styles.productThumb} />
 							<article>
-								<p>Your product details go here</p>
+								<h3 className="applySecondaryTextGrey">
+									Fall Limited Edition Sneakers
+								</h3>
+								<div className="flex gap-4">
+									<span className="applySecondaryTextGrey">
+										$125.00 x {itemCount}
+									</span>
+									<span className="font-bold">${totalCost}</span>
+								</div>
 							</article>
-							<i aria-label="remove item">I</i>
-						</div>
+							<IconTrashBin />
+						</Box>
 					)}
 				</DialogContent>
 				<DialogActions>{/* There were buttons here */}</DialogActions>
