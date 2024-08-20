@@ -13,6 +13,8 @@ import { useCart } from "@/context/CartProvider";
 // CSS
 import styles from "./ShoppingCart.module.scss";
 import IconTrashBin from "@/components/icons/IconTrashBin";
+import { wrap } from "module";
+import ShoppingButton from "@/components/ShoppingButton";
 
 const Transition = React.forwardRef(function Transition(
 	props: TransitionProps & {
@@ -103,21 +105,35 @@ export default function ShoppingCart() {
 							Your cart is empty.
 						</DialogContentText>
 					) : (
-						<Box sx={{ display: "flex", gap: "1rem", width: "100%}" }}>
-							<span className={styles.productThumb} />
-							<article>
-								<h3 className="applySecondaryTextGrey">
-									Fall Limited Edition Sneakers
-								</h3>
-								<div className="flex gap-4">
-									<span className="applySecondaryTextGrey">
-										$125.00 x {itemCount}
-									</span>
-									<span className="font-bold">${totalCost}</span>
-								</div>
-							</article>
-							<IconTrashBin />
-						</Box>
+						<section className="flex flex-wrap gap-y-6">
+							<Box
+								sx={{
+									display: "flex",
+									gap: "1rem",
+									width: "100%}",
+								}}
+							>
+								<span className={styles.productThumb} />
+								<article>
+									<h3 className="applySecondaryTextGrey">
+										Fall Limited Edition Sneakers
+									</h3>
+									<div className="flex gap-4">
+										<span className="applySecondaryTextGrey">
+											$125.00 x {itemCount}
+										</span>
+										<span className="font-bold">${totalCost}</span>
+									</div>
+								</article>
+								<IconTrashBin />
+							</Box>
+							<ShoppingButton
+								$backgroundColor="var(--primary-orange)"
+								$justifyContent="center"
+							>
+								Checkout
+							</ShoppingButton>
+						</section>
 					)}
 				</DialogContent>
 				<DialogActions>{/* There were buttons here */}</DialogActions>
