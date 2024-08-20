@@ -82,7 +82,7 @@ export default function ShoppingCart() {
 					}}
 				>
 					{/* The line bellow will make so that the component inside it will only render when the cart is empty */}
-					{itemCount === 0 && (
+					{itemCount === 0 ? (
 						<DialogContentText
 							id="alert-dialog-slide-description"
 							sx={{
@@ -91,9 +91,16 @@ export default function ShoppingCart() {
 								fontWeight: "bold",
 							}}
 						>
-							{/* Your cart is empty. */}
-							You cart has: {itemCount} items.
+							Your cart is empty.
 						</DialogContentText>
+					) : (
+						<div>
+							<span className="productThumb" />
+							<article>
+								<p>Your product details go here</p>
+							</article>
+							<i aria-label="remove item">I</i>
+						</div>
 					)}
 				</DialogContent>
 				<DialogActions>{/* There were buttons here */}</DialogActions>
