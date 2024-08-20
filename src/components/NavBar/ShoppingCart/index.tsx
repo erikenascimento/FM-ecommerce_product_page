@@ -35,6 +35,11 @@ export default function ShoppingCart() {
 
 	return (
 		<>
+			{itemCount > 0 && (
+				<span className="position: relative bottom-3 left-12 w-6 h-4 rounded-md bg-orange-600 text-white font-bold text-center z-10">
+					{itemCount}
+				</span>
+			)}
 			<Button onClick={handleClickOpen} sx={{ padding: "0", minWidth: "0px" }}>
 				<IconShoppingCart />
 			</Button>
