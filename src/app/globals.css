@@ -20,6 +20,11 @@ body {
 	font-family: "Kumbh Sans", sans-serif;
 }
 
+/* I Created this global class so I can easily apply that font color inside MUI elements */
+.applySecondaryTextGrey {
+	color: var(--secondary-text-grey);
+}
+
 /* The code bellow came with the next initialization, I'll be keep them commented for now*/
 
 /*
