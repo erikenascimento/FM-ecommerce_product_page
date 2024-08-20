@@ -1,5 +1,4 @@
 import AvatarRound from "../AvatarRound";
-import IconShoppingCart from "../icons/IconShoppingCart";
 import Logo from "../Logo";
 import HamburguerMENU from "./HamburguerMENU";
 
