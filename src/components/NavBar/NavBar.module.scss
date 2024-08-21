@@ -18,4 +18,8 @@
   .navBar {
     margin: 28px var(--margin-lg-nav) 28px var(--margin-lg-nav);
   }
+
+  .navBar__navDiv {
+    column-gap: 0px;
+  }
 }
