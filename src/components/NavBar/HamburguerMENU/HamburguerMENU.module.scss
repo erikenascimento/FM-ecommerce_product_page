@@ -1,3 +1,5 @@
+@import "@/styles/variables";
+
 .hamburguerMENU {
 	background-image: url("./icon-menu.svg");
 	background-size: contain;
@@ -15,4 +17,10 @@
 	color: var(--primary-text-black); /* Set color to --primary-text-black */
 
 	padding-left: 1rem;
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+	.hamburguerMENU {
+		display: none;
+	}
 }
