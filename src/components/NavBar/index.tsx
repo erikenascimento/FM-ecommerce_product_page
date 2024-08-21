@@ -18,8 +18,8 @@ const NavBar = () => {
 				<Logo />
 				<ul className={styles.navBar__list}>
 					{navItems.navItems.map((item, index) => (
-						<li key={index} className={styles.navBar__listItem}>
-							<Link href={`/${item.toLowerCase()}`}>{item}</Link>
+						<li key={index}>
+							<Link href="#">{item}</Link>
 						</li>
 					))}
 				</ul>
