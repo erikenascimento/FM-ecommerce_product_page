@@ -1,15 +1,21 @@
+@import "@/styles/variables";
+
 .navBar {
   // Flex options
   display: flex;
   justify-content: space-between;
   // Dimensioning
-  width: 100%;
-  // Spacing
-  padding: var(--global-margin);
+  margin: 19px 24px 19px 24px;
 }
 
 .navBar__navDiv {
   align-items: center;
   display: flex;
   column-gap: 1rem;
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .navBar {
+    margin: 28px 165px 28px 165px;
+  }
 }

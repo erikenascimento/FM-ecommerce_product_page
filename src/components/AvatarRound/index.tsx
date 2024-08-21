@@ -19,6 +19,11 @@ const StyledAvatar = styled.span<IAvatarPath>`
 
 	width: 24px;
 	height: 24px;
+
+	@media screen and (min-width: 1440px) {
+		width: 50px;
+		height: 50px;
+	}
 `;
 
 //this prop has the prefix $ to indicate react that is an transient prop, avoiding console errors
