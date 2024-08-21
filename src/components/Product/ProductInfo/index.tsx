@@ -14,8 +14,8 @@ function ProductInfo() {
 				</h1>
 				<p className={styles["productArticle__description"]}>
 					These low-profile sneakers are your perfect casual wear companion.
-					Featuring a durable rubber outer sole, they'll withstand everything
-					the weather can offer.
+					Featuring a durable rubber outer sole, they`&apos`ll withstand
+					everything the weather can offer.
 				</p>
 			</article>
 			<div className={styles["pricing"]}>
