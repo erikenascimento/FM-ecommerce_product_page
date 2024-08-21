@@ -1,9 +1,14 @@
+// Custom Components
 import AvatarRound from "../AvatarRound";
 import Logo from "../Logo";
 import HamburguerMENU from "./HamburguerMENU";
-
-import styles from "./NavBar.module.scss";
 import ShoppingCart from "./ShoppingCart";
+// Next Components
+import Link from "next/link";
+// CSS
+import styles from "./NavBar.module.scss";
+// Data
+import navItems from "@/data/navItems.json";
 
 const NavBar = () => {
 	return (
@@ -11,6 +16,13 @@ const NavBar = () => {
 			<div className={styles["navBar__navDiv"]}>
 				<HamburguerMENU />
 				<Logo />
+				<ul className={styles.navBar__list}>
+					{navItems.navItems.map((item, index) => (
+						<li key={index} className={styles.navBar__listItem}>
+							<Link href={`/${item.toLowerCase()}`}>{item}</Link>
+						</li>
+					))}
+				</ul>
 			</div>
 			<div className={styles["navBar__navDiv"]}>
 				<ShoppingCart />
