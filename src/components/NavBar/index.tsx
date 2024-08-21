@@ -16,7 +16,7 @@ const NavBar = () => {
 			<div className={styles["navBar__navDiv"]}>
 				<HamburguerMENU />
 				<Logo />
-				<ul className={styles.navBar__list}>
+				<ul className={styles.navBar__navDiv__list}>
 					{navItems.navItems.map((item, index) => (
 						<li key={index}>
 							<Link href="#">{item}</Link>
