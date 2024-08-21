@@ -19,7 +19,13 @@
     margin: 28px var(--margin-lg-nav) 28px var(--margin-lg-nav);
   }
 
-  .navBar__navDiv:first-child {
-    column-gap: 0px;
+  .navBar__navDiv {
+    &:first-child {
+      column-gap: 0px;
+    }
+
+    &:nth-child(2) {
+      column-gap: 3rem;
+    }
   }
 }
