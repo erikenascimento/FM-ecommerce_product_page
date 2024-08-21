@@ -12,6 +12,8 @@ import ListItemText from "@mui/material/ListItemText";
 // Still MUI but outside the default imports
 import CloseIcon from "@mui/icons-material/Close";
 import { IconButton } from "@mui/material";
+// Data import
+import navItems from "@/data/navItems.json";
 
 const HamburguerMENU = () => {
 	const [open, setOpen] = React.useState(false);
@@ -38,7 +40,7 @@ const HamburguerMENU = () => {
 				</IconButton>
 			</Box>
 			<List>
-				{["Collections", "Men", "Women", "About", "Contact"].map(text => (
+				{navItems.navItems.map(text => (
 					<ListItem key={text} disablePadding>
 						<ListItemButton>
 							<ListItemText
