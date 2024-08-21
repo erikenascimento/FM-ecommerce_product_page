@@ -1,5 +1,5 @@
 // CSS
-import styles from "./HamburguerMENU.module.css";
+import styles from "./HamburguerMENU.module.scss";
 // MUI Drawer imports
 import React from "react";
 import Box from "@mui/material/Box";
