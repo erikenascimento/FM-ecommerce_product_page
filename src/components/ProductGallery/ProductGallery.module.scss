@@ -1,0 +1,11 @@
+@import "@/styles/variables";
+
+.productGallery {
+    display: none;
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    .productGallery {
+        display: block;
+    }
+}

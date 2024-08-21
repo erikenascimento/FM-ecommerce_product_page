@@ -1,11 +1,14 @@
 "use client";
-
+// Custom components
 import NavBar from "@/components/NavBar";
 import ProductInfo from "@/components/Product/ProductInfo";
 import ProductSwiper from "@/components/Product/ProductSwiper";
+import ProductGallery from "@/components/ProductGallery";
 import SectionDivider from "@/components/SectionDivider";
-// For the cart component
+// Provider For the cart component
 import { CartProvider } from "@/context/CartProvider";
+// CSS
+import styles from "./page.module.scss";
 
 export default function Home() {
 	return (
@@ -13,7 +16,8 @@ export default function Home() {
 			<CartProvider>
 				<NavBar />
 				<SectionDivider />
-				<main>
+				<main className={styles.mainContent}>
+					<ProductGallery />
 					<ProductSwiper />
 					<ProductInfo />
 				</main>
