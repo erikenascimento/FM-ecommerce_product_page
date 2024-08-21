@@ -9,5 +9,17 @@
         display: block;
 
         margin-left: 48px;
+
+        &__highlighted {
+            min-height: 445px;
+            min-width: 445px;
+        }
+
+        &__thumbnails {
+            &__listItem > img {
+                min-height: 88px;
+                min-width: 88px;
+            }
+        }
     }
 }
