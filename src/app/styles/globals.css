@@ -14,6 +14,7 @@
 	--light-greyish-blue: hsl(223, 64%, 98%);
 	/* Spacing */
 	--global-margin: 1.5rem;
+	--margin-lg-nav: 165px;
 }
 
 body {

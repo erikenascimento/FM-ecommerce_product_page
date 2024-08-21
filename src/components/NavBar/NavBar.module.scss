@@ -16,6 +16,6 @@
 
 @media screen and (min-width: $breakpoint-lg) {
   .navBar {
-    margin: 28px 165px 28px 165px;
+    margin: 28px var(--margin-lg-nav) 28px var(--margin-lg-nav);
   }
 }
