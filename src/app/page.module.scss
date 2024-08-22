@@ -2,8 +2,9 @@
 
 @media screen and (min-width: $breakpoint-lg) {
     .mainContent {
+        // Flex
         display: flex;
-
+        // Positioning
         margin-left: var(--margin-lg-nav);
         margin-right: var(--margin-lg-nav);
     }
