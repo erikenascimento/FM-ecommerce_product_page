@@ -1,3 +1,5 @@
+@import "@/styles/variables";
+
 .productArticle,
 .pricing {
     // "Global" dimensioning
@@ -70,5 +72,67 @@
         color: var(--secondary-text-grey);
         line-height: 26px;
         text-decoration: line-through;
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    .productInfo {
+        margin-top: 62px;
+        margin-right: 47px;
+    }
+
+    .productArticle,
+    .pricing {
+        // To overwride the margin from mobile
+        margin: 0px;
+
+        & > * {
+            margin-bottom: 0px;
+        }
+    }
+
+    .productArticle {
+        &__brandName {
+            // Styling
+            color: var(--secondary-text-grey);
+            // Typography
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+        &__title {
+            // Typography
+            font-size: 44px;
+            line-height: 48px;
+
+            margin-top: 24px;
+        }
+        &__description {
+            // Typography
+            font-size: 16px;
+            line-height: 26px;
+            // Spacing
+            margin-top: 32px;
+        }
+    }
+
+    .pricing {
+        // Flex
+        column-gap: 0.5rem;
+        justify-content: flex-start;
+        // Dimensioning
+        height: auto;
+        // Spacing
+        margin-top: 28px;
+
+        flex-wrap: wrap;
+
+        &__fullPrice {
+            // Styling
+            color: var(--secondary-text-grey);
+            line-height: 26px;
+            text-decoration: line-through;
+
+            flex-basis: 100%;
+        }
     }
 }

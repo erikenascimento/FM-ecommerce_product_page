@@ -1,0 +1,10 @@
+@import "@/styles/variables";
+
+@media screen and (min-width: $breakpoint-lg) {
+    .mainContent {
+        display: flex;
+
+        margin-left: var(--margin-lg-nav);
+        margin-right: var(--margin-lg-nav);
+    }
+}

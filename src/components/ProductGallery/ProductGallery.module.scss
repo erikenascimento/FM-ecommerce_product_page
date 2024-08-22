@@ -1,0 +1,36 @@
+@import "@/styles/variables";
+
+.productGallery {
+    display: none;
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    .productGallery {
+        display: block;
+        // Spacing
+        margin-left: 48px;
+        margin-right: 125px;
+
+        // Selecting child
+        &__highlighted {
+            min-height: 445px;
+            min-width: 445px;
+        }
+        &__thumbnails {
+            // Flex
+            display: flex;
+            column-gap: 31px;
+            // Spacing
+            margin-top: 32px;
+            &__listItem > img {
+                min-height: 88px;
+                min-width: 88px;
+            }
+        }
+        // Applying to all images in the component
+        &__highlighted,
+        &__thumbnails__listItem > img {
+            border-radius: 10px;
+        }
+    }
+}

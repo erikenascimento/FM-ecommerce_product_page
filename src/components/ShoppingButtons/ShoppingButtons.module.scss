@@ -1,8 +1,29 @@
+@import "@/styles/variables";
+
 .shoppingButtons {
     margin-left: var(--global-margin);
     margin-right: var(--global-margin);
 
     & > :first-child {
         margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    .shoppingButtons {
+        // Flex
+        display: flex;
+
+        column-gap: 1rem;
+        // Spacing
+        margin: 32px 0 0 0;
+
+        & > :first-child {
+            // To match the layout
+            min-width: 35.28%;
+            width: 157px;
+            // Removing style from mobile
+            margin-bottom: 0;
+        }
     }
 }
