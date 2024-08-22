@@ -7,7 +7,7 @@ import productData from "@/data/productData.json";
 
 function ProductInfo() {
 	return (
-		<>
+		<section className={styles.productInfo}>
 			<article className={styles.productArticle}>
 				<span className={styles["productArticle__brandName"]}>
 					{productData.product.company}
@@ -31,7 +31,7 @@ function ProductInfo() {
 				</span>
 			</div>
 			<ShoppingButtons />
-		</>
+		</section>
 	);
 }
 
