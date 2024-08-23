@@ -10,11 +10,15 @@
 	--primary-text-black: #1d2026;
 	/* Component Colors */
 	--primary-orange: #ff7e1b;
+	--pale-orange: #ffab6a;
 
 	--light-greyish-blue: hsl(223, 64%, 98%);
 	/* Spacing */
 	--global-margin: 1.5rem;
 	--margin-lg-nav: 165px;
+
+	/* Effects  */
+	--image-hover: rgba(255, 255, 255, 0.5);
 }
 
 body {

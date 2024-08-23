@@ -25,12 +25,20 @@ const StyledShoppingButton = styled.span<IShoppingButtonProps>`
 	/* Dimensioning */
 	height: 56px;
 	width: 100%;
+	padding: 0 2rem 0 2rem;
 	/* Aspect */
 	border-radius: 8px;
 	/* Typography */
 	font-weight: bold;
 
-	padding: 0 2rem 0 2rem;
+	/* For the hover effect on the orange button only */
+	${props =>
+		props.$backgroundColor === "var(--primary-orange)" &&
+		`
+    &:hover {
+      background-color: var(--pale-orange)
+    }
+  `}
 `;
 
 const ShoppingButton: React.FC<IShoppingButtonProps> = ({

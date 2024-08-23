@@ -41,6 +41,24 @@
       // Typography
       color: var(--secondary-text-grey);
       font-size: 15px;
+
+      // Styles for the hover effect
+      & > li > * {
+        // This is to realign the text because of the hover effects
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 100%;
+        }
+        &:hover::after {
+          height: 4px; /* Adjust the thickness of the border */
+          background-color: var(--primary-orange); /* Orange border color */
+          transform: translateY(38px); /* Initially hide the border by translating it down */
+        }
+      }
     }
   }
 }

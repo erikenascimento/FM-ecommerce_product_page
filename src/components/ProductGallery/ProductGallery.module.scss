@@ -11,10 +11,11 @@
         margin-left: 48px;
         margin-right: 125px;
 
+        max-width: 30%;
+
         // Selecting child
         &__highlighted {
-            min-height: 445px;
-            min-width: 445px;
+            flex-basis: 445px;
         }
         &__thumbnails {
             // Flex
@@ -22,15 +23,21 @@
             column-gap: 31px;
             // Spacing
             margin-top: 32px;
+
             &__listItem > img {
-                min-height: 88px;
-                min-width: 88px;
+                flex-basis: 88px;
             }
         }
         // Applying to all images in the component
         &__highlighted,
         &__thumbnails__listItem > img {
             border-radius: 10px;
+
+            // To add the hover filter
+            &:hover {
+                opacity: 50%;
+                transition: opacity 0.3s ease;
+            }
         }
     }
 }
