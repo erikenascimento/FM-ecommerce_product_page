@@ -15,7 +15,7 @@ const IconShoppingMinus = () => {
 					id="a"
 				/>
 			</defs>
-			<use fill-rule="nonzero" xlinkHref="#a" />
+			<use fillRule="nonzero" xlinkHref="#a" />
 		</svg>
 	);
 };
