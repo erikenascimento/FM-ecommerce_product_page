@@ -1,10 +1,15 @@
 import styles from "./IconClose.module.scss";
 
-const IconClose = () => {
+interface IIconCloseProps {
+	$size: string;
+}
+
+const IconClose: React.FC<IIconCloseProps> = ({ $size }) => {
+	const widthSize = (parseInt($size) - 1).toString();
 	return (
 		<svg
-			width="14"
-			height="15"
+			width={widthSize}
+			height={$size}
 			xmlns="http://www.w3.org/2000/svg"
 			className={styles.iconClose}
 		>
