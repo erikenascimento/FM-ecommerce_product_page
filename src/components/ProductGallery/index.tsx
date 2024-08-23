@@ -10,10 +10,10 @@ const ProductGallery = () => {
 	const productImages = productData.product.images;
 
 	// To add the outline effect when selected
-	const [isActive, setIsActive] = useState(false);
+	const [isActive, setIsActive] = useState<number | null>(null);
 
-	const toggleClass = () => {
-		setIsActive(!isActive);
+	const toggleClass = (index: number) => {
+		setIsActive(index);
 	};
 
 	return (
@@ -28,12 +28,12 @@ const ProductGallery = () => {
 					<li
 						className={styles.productGallery__thumbnails__listItem}
 						key={index}
-						onClick={toggleClass}
+						onClick={() => toggleClass(index)}
 					>
 						<img
 							src={imageSrc}
 							alt={`Product thumbnail number ${index + 1}`}
-							className={isActive ? styles.imageOutlined : ""}
+							className={isActive === index ? styles.imageClicked : ""}
 						/>
 					</li>
 				))}
