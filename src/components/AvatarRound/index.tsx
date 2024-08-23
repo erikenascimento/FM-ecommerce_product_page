@@ -10,15 +10,20 @@ interface IAvatarPath {
 
 //The styled component will have the interface who will expect a string
 const StyledAvatar = styled.span<IAvatarPath>`
-	//Background
+	// Background
 	background-image: url(${props => props.$imagepath});
-	background-size: cover;
+	background-size: contain;
 	background-position: center;
-	//Dimensioning
+	// Dimensioning
 	border-radius: 50%;
 
 	width: 24px;
 	height: 24px;
+
+	// To add the border on hover
+	&:hover {
+		outline: 2px solid var(--primary-orange);
+	}
 
 	@media screen and (min-width: 1440px) {
 		width: 50px;
