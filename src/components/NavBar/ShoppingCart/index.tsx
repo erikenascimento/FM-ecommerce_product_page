@@ -13,8 +13,13 @@ import { useCart } from "@/context/CartProvider";
 // CSS
 import styles from "./ShoppingCart.module.scss";
 import IconTrashBin from "@/components/icons/IconTrashBin";
-import { wrap } from "module";
 import ShoppingButton from "@/components/ShoppingButton";
+// Data
+import productData from "@/data/productData.json";
+
+const discountedPrice =
+	productData.product.pricing.fullPrice *
+	productData.product.pricing.discountRate;
 
 const Transition = React.forwardRef(function Transition(
 	props: TransitionProps & {
@@ -29,7 +34,7 @@ export default function ShoppingCart() {
 	const [open, setOpen] = React.useState(false);
 
 	const { itemCount } = useCart();
-	let totalCost = (itemCount * 125).toFixed(2);
+	let totalCost = (itemCount * discountedPrice).toFixed(2);
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -61,7 +66,7 @@ export default function ShoppingCart() {
 				PaperProps={{
 					sx: {
 						// Dimensioning
-						maxWidth: "none",
+						maxWidth: "360px",
 						minHeight: "256px",
 						width: "96vw",
 						// Positioning
@@ -70,6 +75,14 @@ export default function ShoppingCart() {
 						margin: "0",
 						// Form
 						borderRadius: "10px",
+						// Styling
+						boxShadow: "0px 20px 50px -20px rgba(29, 32, 38, 0.5)",
+
+						// Media query for larger screens
+						"@media (min-width: 1440px)": {
+							top: "94px",
+							right: "90px",
+						},
 					},
 				}}
 			>
@@ -100,6 +113,7 @@ export default function ShoppingCart() {
 								// Typography
 								fontFamily: "'Kumbh sans', sans-serif",
 								fontWeight: "bold",
+								color: "var(--secondary-text-grey)",
 							}}
 						>
 							Your cart is empty.
@@ -113,14 +127,14 @@ export default function ShoppingCart() {
 									width: "100%}",
 								}}
 							>
-								<span className={styles.productThumb} />
+								<figure className={styles.productThumb} />
 								<article>
 									<h3 className="applySecondaryTextGrey">
-										Fall Limited Edition Sneakers
+										{productData.product.title}
 									</h3>
 									<div className="flex gap-4">
 										<span className="applySecondaryTextGrey">
-											$125.00 x {itemCount}
+											${discountedPrice.toFixed(2)} x {itemCount}
 										</span>
 										<span className="font-bold">${totalCost}</span>
 									</div>
