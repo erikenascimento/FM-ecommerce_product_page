@@ -40,4 +40,9 @@
             }
         }
     }
+
+    .imageOutlined {
+        // For the outline when selected
+        outline: var(--primary-orange) solid 2px;
+    }
 }
