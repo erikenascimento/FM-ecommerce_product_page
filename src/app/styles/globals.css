@@ -16,6 +16,9 @@
 	/* Spacing */
 	--global-margin: 1.5rem;
 	--margin-lg-nav: 165px;
+
+	/* Effects  */
+	--image-hover: rgba(255, 255, 255, 0.5);
 }
 
 body {

@@ -32,6 +32,12 @@
         &__highlighted,
         &__thumbnails__listItem > img {
             border-radius: 10px;
+
+            // To add the hover filter
+            &:hover {
+                opacity: 50%;
+                transition: opacity 0.3s ease;
+            }
         }
     }
 }
