@@ -20,7 +20,7 @@ const ProductGallery = () => {
 		<section className={styles.productGallery}>
 			<img
 				className={styles.productGallery__highlighted}
-				src={productImages.productImages[0]}
+				src={productImages.productImages[isActive || 0]}
 				alt="Product image number 1"
 			/>
 			<ul className={styles.productGallery__thumbnails}>
