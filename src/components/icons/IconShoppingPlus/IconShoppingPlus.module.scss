@@ -1,11 +1,7 @@
 .iconShoppingPlus {
-    // Background
-    background-image: url("./icon-plus.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    // Dimensioning
-    height: 12px;
-    width: 12px;
+    fill: var(--primary-orange);
 
-    display: block;
+    &:hover {
+        fill: var(--pale-orange);
+    }
 }
