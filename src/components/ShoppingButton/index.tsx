@@ -36,7 +36,8 @@ const StyledShoppingButton = styled.span<IShoppingButtonProps>`
 		props.$backgroundColor === "var(--primary-orange)" &&
 		`
     &:hover {
-      background-color: var(--pale-orange)
+      background-color: var(--pale-orange);
+	  cursor: pointer;
     }
   `}
 `;
