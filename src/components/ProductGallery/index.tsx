@@ -1,9 +1,13 @@
-// CSS
-import { useState } from "react";
 // React Hooks
+import { useState } from "react";
+// CSS
 import styles from "./ProductGallery.module.scss";
 // Data
 import productData from "@/data/productData.json";
+// Custom components
+import ProductGalleryLightbox from "./ProductGalleryLightbox";
+import ProductGalleryThumbnails from "./ProductGalleryThumbnails";
+import { GalleryProvider } from "@/context/GalleryProvider";
 
 const ProductGallery = () => {
 	// Creating a cosnt to shorten the pointer name to the image
@@ -16,29 +20,36 @@ const ProductGallery = () => {
 		setIsActive(index);
 	};
 
+	// This is all the code for the lightbox
+	const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+	const openLightbox = () => {
+		setIsLightboxOpen(true);
+	};
+
+	const closeLightbox = () => {
+		setIsLightboxOpen(false);
+	};
+
+	// The component itself
 	return (
-		<section className={styles.productGallery}>
-			<img
-				className={styles.productGallery__highlighted}
-				src={productImages.productImages[isActive || 0]}
-				alt="Product image number 1"
-			/>
-			<ul className={styles.productGallery__thumbnails}>
-				{productImages.productThumbnails.map((imageSrc, index) => (
-					<li
-						className={styles.productGallery__thumbnails__listItem}
-						key={index}
-						onClick={() => toggleClass(index)}
-					>
-						<img
-							src={imageSrc}
-							alt={`Product thumbnail number ${index + 1}`}
-							className={isActive === index ? styles.imageClicked : ""}
-						/>
-					</li>
-				))}
-			</ul>
-		</section>
+		<GalleryProvider>
+			<section className={styles.productGallery}>
+				<img
+					className={styles.productGallery__highlighted}
+					src={productImages.productImages[isActive || 0]}
+					alt={`Product image number ${(isActive || 0) + 1}`}
+					onClick={openLightbox}
+				/>
+				<ProductGalleryThumbnails />
+			</section>
+			{isLightboxOpen && (
+				<ProductGalleryLightbox
+					imageSrc={productImages.productImages[isActive || 0]}
+					closeLightbox={closeLightbox}
+				/>
+			)}
+		</GalleryProvider>
 	);
 };
 
