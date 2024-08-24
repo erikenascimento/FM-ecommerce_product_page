@@ -18,23 +18,15 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-
+        // Positioning
         position: fixed;
+        top: 70px;
         left: calc(50vw - (550px / 2));
         right: calc(50vw - (550px / 2));
-        top: 70px;
-        width: fit-content;
 
         z-index: 11;
-
-        img {
-            align-self: center;
-            min-width: 550px;
-            min-height: 550px;
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 10px;
-        }
+        //Dimensioning
+        width: fit-content;
 
         &__closeIconDiv {
             // Positioning so that the item gets
@@ -49,6 +41,24 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+
+        &__highlighted {
+            // Positioning
+            align-self: center;
+            // Dimensioning
+            min-width: 550px;
+            min-height: 550px;
+            max-width: 100%;
+            max-height: 100%;
+            // Aspect
+            border-radius: 10px;
+        }
+
+        &__thumbDiv {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
     }
 }

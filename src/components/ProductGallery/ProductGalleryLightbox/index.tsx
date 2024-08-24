@@ -22,9 +22,13 @@ const ProductGalleryLightbox: React.FC<LightboxProps> = ({
 				>
 					<IconClose $size={"20"} />
 				</div>
-				<img src={imageSrc} alt="Enlarged product view" />
+				<img
+					src={imageSrc}
+					alt="Enlarged product view"
+					className={styles.lightbox__productGallery__highlighted}
+				/>
 				<div className={styles.lightbox__productGallery__thumbDiv}>
-					{/* <ProductGalleryThumbnails /> */}
+					<ProductGalleryThumbnails />
 				</div>
 			</section>
 		</span>

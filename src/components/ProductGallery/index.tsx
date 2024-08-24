@@ -16,10 +16,6 @@ const ProductGallery = () => {
 	// To add the outline effect when selected
 	const [isActive, setIsActive] = useState<number | null>(null);
 
-	const toggleClass = (index: number) => {
-		setIsActive(index);
-	};
-
 	// This is all the code for the lightbox
 	const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
