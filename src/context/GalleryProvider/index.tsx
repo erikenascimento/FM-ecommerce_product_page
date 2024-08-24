@@ -9,15 +9,9 @@ const GalleryContext = createContext<GalleryContextProps | undefined>(
 	undefined
 );
 
-export const useGallery = () => {
-	const context = useContext(GalleryContext);
-	if (!context) {
-		throw new Error("useGallery must be used within a GalleryProvider");
-	}
-	return context;
-};
-
-export const GalleryProvider = ({ children }: { children: ReactNode }) => {
+export const GalleryProvider: React.FC<{ children: React.ReactNode }> = ({
+	children,
+}) => {
 	const [isActive, setIsActive] = useState<number | null>(null);
 
 	const toggleClass = (index: number) => {
@@ -29,4 +23,12 @@ export const GalleryProvider = ({ children }: { children: ReactNode }) => {
 			{children}
 		</GalleryContext.Provider>
 	);
+};
+
+export const useGallery = () => {
+	const context = useContext(GalleryContext);
+	if (!context) {
+		throw new Error("useGallery must be used within a GalleryProvider");
+	}
+	return context;
 };

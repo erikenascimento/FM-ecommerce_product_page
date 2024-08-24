@@ -9,6 +9,7 @@ import SectionDivider from "@/components/SectionDivider";
 import { CartProvider } from "@/context/CartProvider";
 // CSS
 import styles from "./page.module.scss";
+import { GalleryProvider } from "@/context/GalleryProvider";
 
 export default function Home() {
 	return (
@@ -17,7 +18,9 @@ export default function Home() {
 				<NavBar />
 				<SectionDivider />
 				<main className={styles.mainContent}>
-					<ProductGallery />
+					<GalleryProvider>
+						<ProductGallery />
+					</GalleryProvider>
 					<ProductSwiper />
 					<ProductInfo />
 				</main>
