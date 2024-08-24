@@ -1,0 +1,35 @@
+@import "@/styles/variables";
+
+.productGalleryThumbnails {
+    display: none;
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    .productGalleryThumbnails {
+        // Flex
+        display: flex;
+        column-gap: 31px;
+        // Spacing
+        margin-top: 32px;
+
+        &__listItem > img {
+            flex-basis: 88px;
+            border-radius: 10px;
+            // max-width: 88px;
+            max-height: 88px;
+            &:hover {
+                // To add the hover filter
+                opacity: 50%;
+                transition: opacity 0.3s ease;
+
+                cursor: pointer;
+            }
+        }
+    }
+
+    // For the filter when the image is selected
+    .imageClicked {
+        opacity: 50%;
+        outline: 2px solid var(--primary-orange);
+    }
+}

@@ -7,7 +7,12 @@ import IconShoppingPlus from "../icons/IconShoppingPlus";
 import { useCart } from "@/context/CartProvider";
 
 function ShoppingButtons() {
-	const { itemCount, handleIncrement, handleDecrement } = useCart();
+	const { itemCount, handleIncrement, handleDecrement, setUpdateCart } =
+		useCart();
+
+	const handleCartUpdate = () => {
+		setUpdateCart(true);
+	};
 
 	return (
 		<div className={styles.shoppingButtons}>
@@ -23,13 +28,18 @@ function ShoppingButtons() {
 					<IconShoppingPlus />
 				</button>
 			</ShoppingButton>
-			<ShoppingButton
-				$backgroundColor="var(--primary-orange)"
-				$justifyContent="center"
+			<button
+				onClick={handleCartUpdate}
+				className={styles.shoppingButtons__cartButton}
 			>
-				<IconShoppingCart color="var(--primary-text-black)" />
-				Add to Cart
-			</ShoppingButton>
+				<ShoppingButton
+					$backgroundColor="var(--primary-orange)"
+					$justifyContent="center"
+				>
+					<IconShoppingCart color="var(--primary-text-black)" />
+					Add to Cart
+				</ShoppingButton>
+			</button>
 		</div>
 	);
 }

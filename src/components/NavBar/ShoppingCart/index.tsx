@@ -35,6 +35,10 @@ export default function ShoppingCart() {
 
 	const { itemCount } = useCart();
 	let totalCost = (itemCount * discountedPrice).toFixed(2);
+	const { updateCart, setUpdateCart } = useCart();
+	const clearCart = () => {
+		setUpdateCart(false);
+	};
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -46,7 +50,7 @@ export default function ShoppingCart() {
 
 	return (
 		<>
-			{itemCount > 0 && (
+			{updateCart && itemCount > 0 && (
 				<span className="position: relative bottom-3 left-12 w-6 h-4 rounded-md bg-orange-600 text-white font-bold text-center z-10">
 					{itemCount}
 				</span>
@@ -106,7 +110,7 @@ export default function ShoppingCart() {
 					}}
 				>
 					{/* The line bellow will make so that the component inside it will only render when the cart is empty */}
-					{itemCount === 0 ? (
+					{itemCount === 0 || !updateCart ? (
 						<DialogContentText
 							id="alert-dialog-slide-description"
 							sx={{
@@ -119,35 +123,39 @@ export default function ShoppingCart() {
 							Your cart is empty.
 						</DialogContentText>
 					) : (
-						<section className="flex flex-wrap gap-y-6">
-							<Box
-								sx={{
-									display: "flex",
-									gap: "1rem",
-									width: "100%}",
-								}}
-							>
-								<figure className={styles.productThumb} />
-								<article>
-									<h3 className="applySecondaryTextGrey">
-										{productData.product.title}
-									</h3>
-									<div className="flex gap-4">
-										<span className="applySecondaryTextGrey">
-											${discountedPrice.toFixed(2)} x {itemCount}
-										</span>
-										<span className="font-bold">${totalCost}</span>
-									</div>
-								</article>
-								<IconTrashBin />
-							</Box>
-							<ShoppingButton
-								$backgroundColor="var(--primary-orange)"
-								$justifyContent="center"
-							>
-								Checkout
-							</ShoppingButton>
-						</section>
+						updateCart && (
+							<section className="flex flex-wrap gap-y-6">
+								<Box
+									sx={{
+										display: "flex",
+										gap: "1rem",
+										width: "100%}",
+									}}
+								>
+									<figure className={styles.productThumb} />
+									<article>
+										<h3 className="applySecondaryTextGrey">
+											{productData.product.title}
+										</h3>
+										<div className="flex gap-4">
+											<span className="applySecondaryTextGrey">
+												${discountedPrice.toFixed(2)} x {itemCount}
+											</span>
+											<span className="font-bold">${totalCost}</span>
+										</div>
+									</article>
+									<button onClick={clearCart}>
+										<IconTrashBin />
+									</button>
+								</Box>
+								<ShoppingButton
+									$backgroundColor="var(--primary-orange)"
+									$justifyContent="center"
+								>
+									Checkout
+								</ShoppingButton>
+							</section>
+						)
 					)}
 				</DialogContent>
 				<DialogActions>{/* There were buttons here */}</DialogActions>

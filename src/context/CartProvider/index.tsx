@@ -5,6 +5,8 @@ interface CartContextType {
 	itemCount: number;
 	handleIncrement: () => void;
 	handleDecrement: () => void;
+	updateCart: boolean;
+	setUpdateCart: (value: boolean) => void;
 }
 
 // Create the context with default values
@@ -13,6 +15,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 // Provider component
 export function CartProvider({ children }: { children: ReactNode }) {
 	const [itemCount, setItemCount] = useState(0);
+	const [updateCart, setUpdateCart] = useState(false);
 
 	const handleIncrement = () => setItemCount(prevCount => prevCount + 1);
 	const handleDecrement = () =>
@@ -20,7 +23,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
 	return (
 		<CartContext.Provider
-			value={{ itemCount, handleIncrement, handleDecrement }}
+			value={{
+				itemCount,
+				handleIncrement,
+				handleDecrement,
+				updateCart,
+				setUpdateCart,
+			}}
 		>
 			{children}
 		</CartContext.Provider>

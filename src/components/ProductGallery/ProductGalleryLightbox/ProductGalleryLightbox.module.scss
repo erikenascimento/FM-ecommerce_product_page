@@ -1,0 +1,64 @@
+@import "@/styles/variables";
+
+.lightbox {
+    // Style
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    // Positioning
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    // Dimensioning
+    width: 100vw;
+    height: 100vh;
+
+    &__productGallery {
+        //Flex
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        // Positioning
+        position: fixed;
+        top: 70px;
+        left: calc(50vw - (550px / 2));
+        right: calc(50vw - (550px / 2));
+
+        z-index: 11;
+        //Dimensioning
+        width: fit-content;
+
+        &__closeIconDiv {
+            // Positioning so that the item gets
+            //correctly align at flex-end without
+            //reducing it's padding-right
+            position: relative;
+            left: 20px;
+
+            // Dimensioning
+            padding: 20px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &__highlighted {
+            // Positioning
+            align-self: center;
+            // Dimensioning
+            min-width: 550px;
+            min-height: 550px;
+            max-width: 100%;
+            max-height: 100%;
+            // Aspect
+            border-radius: 10px;
+        }
+
+        &__thumbDiv {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

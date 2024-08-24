@@ -17,27 +17,23 @@
         &__highlighted {
             flex-basis: 445px;
         }
-        &__thumbnails {
-            // Flex
-            display: flex;
-            column-gap: 31px;
-            // Spacing
-            margin-top: 32px;
-
-            &__listItem > img {
-                flex-basis: 88px;
-            }
-        }
         // Applying to all images in the component
-        &__highlighted,
-        &__thumbnails__listItem > img {
+        &__highlighted {
             border-radius: 10px;
 
             // To add the hover filter
             &:hover {
                 opacity: 50%;
                 transition: opacity 0.3s ease;
+
+                cursor: pointer;
             }
         }
+    }
+
+    .imageClicked {
+        // For the outline when selected
+        outline: var(--primary-orange) solid 2px;
+        opacity: 50%;
     }
 }
